@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+     <link rel="stylesheet" href="/templates/index.css">
+{% endblock %}
+
+
+{% block content %}
+    <h1>Products</h1>
+    <div class="row">
+    {% for product in products %}
+    <div class="col car-card">
+        <div class="card" style="width: 300px; height:400px; margin-bottom: 250px">
+            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">${{ product.price }}</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
